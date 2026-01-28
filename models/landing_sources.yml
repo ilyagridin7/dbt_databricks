@@ -1,0 +1,9 @@
+sources:
+  - name: landing
+    database: dbt_formation
+    schema: landing 
+    tables:
+      - name: orders
+      - name: reviews
+      - name: products
+      - name: users

@@ -1,3 +1,3 @@
 select
 *
-from dbt_formation.landing.orders
+from {{ source('landing', 'orders') }}
