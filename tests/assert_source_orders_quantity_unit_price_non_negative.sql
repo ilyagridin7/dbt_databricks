@@ -1,4 +1,4 @@
-{{config(severity = 'warn')}}
+{{config(severity = 'Warn')}}
 
 SELECT
 *
