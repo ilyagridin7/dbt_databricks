@@ -39,3 +39,7 @@ models:
   my_new_project:
     +schema: default
     +materialized: table
+
+flags:
+  use_managed_iceberg: true
+  use_materialization_v2: true
