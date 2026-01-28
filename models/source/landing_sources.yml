@@ -4,6 +4,42 @@ sources:
     schema: landing 
     tables:
       - name: orders
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
       - name: reviews
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
       - name: products
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
       - name: users
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
