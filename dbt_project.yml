@@ -48,6 +48,10 @@ models:
       +materialized: table
       +schema: gold
 
+seeds:
+  dbt_databricks_project:
+    +schema: bronze
+
 flags:
   use_managed_iceberg: true
   use_materialization_v2: true
