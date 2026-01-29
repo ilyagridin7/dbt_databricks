@@ -4,8 +4,8 @@ version: 2
 sources:
   - name: landing
     database: |
-     {%- if target.name == "prod" -%} dbt_project_catalog_prod
-     {%- else -%} dbt_project_catalog
+     {%- if target.name == "prod" -%} dbt_formation_prod
+     {%- else -%} dbt_formation_catalog
      {%- endif -%}
     schema: landing  
     tables:
