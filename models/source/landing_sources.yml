@@ -8,11 +8,17 @@ sources:
           - name: id
             tests:
               - unique:
-                  config:
-                   severity: "Warn"
+                 config:
+                  severity: "Warn"
               - not_null:
-                  config:
-                   severity: "Warn"
+                 config:
+                  severity: "Warn"
+          - name: quantity
+            tests:
+              - assert_non_negative
+          - name: unit_price
+            tests:
+              - assert_non_negative
       - name: reviews
         columns:
           - name: id
