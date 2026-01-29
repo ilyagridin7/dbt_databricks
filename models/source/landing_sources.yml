@@ -1,0 +1,51 @@
+sources:
+  - name: landing
+    database: dbt_formation
+    schema: landing 
+    tables:
+      - name: orders
+        columns:
+          - name: id
+            tests:
+              - unique:
+                 config:
+                  severity: "Warn"
+              - not_null:
+                 config:
+                  severity: "Warn"
+          - name: quantity
+            tests:
+              - assert_non_negative
+          - name: unit_price
+            tests:
+              - assert_non_negative
+      - name: reviews
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
+      - name: products
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
+      - name: users
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  config:
+                   severity: "Warn"
+              - not_null:
+                  config:
+                   severity: "Warn"
