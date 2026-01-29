@@ -3,10 +3,7 @@ version: 2
 
 sources:
   - name: landing
-    database: |
-     {%- if target.name == "prod" -%} dbt_formation_prod
-     {%- else -%} dbt_formation_catalog
-     {%- endif -%}
+    database: "{{ env_var('DBT_CATALOG') }}"
     schema: landing  
     tables:
       - name: orders
