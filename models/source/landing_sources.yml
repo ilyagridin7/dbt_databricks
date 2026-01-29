@@ -1,7 +1,13 @@
+
+version: 2
+
 sources:
   - name: landing
-    database: dbt_formation
-    schema: landing 
+    database: |
+     {%- if target.name == "prod" -%} dbt_project_catalog_prod
+     {%- else -%} dbt_project_catalog
+     {%- endif -%}
+    schema: landing  
     tables:
       - name: orders
         columns:
@@ -19,33 +25,33 @@ sources:
           - name: unit_price
             tests:
               - assert_non_negative
-      - name: reviews
-        columns:
-          - name: id
-            tests:
-              - unique:
-                  config:
-                   severity: "Warn"
-              - not_null:
-                  config:
-                   severity: "Warn"
       - name: products
         columns:
           - name: id
             tests:
               - unique:
-                  config:
-                   severity: "Warn"
+                 config:
+                  severity: "Warn"
               - not_null:
-                  config:
-                   severity: "Warn"
+                 config:
+                  severity: "Warn"
+      - name: reviews
+        columns:
+          - name: id
+            tests:
+              - unique:
+                 config:
+                  severity: "Warn"
+              - not_null:
+                 config:
+                  severity: "Warn"
       - name: users
         columns:
           - name: id
             tests:
               - unique:
-                  config:
-                   severity: "Warn"
+                 config:
+                  severity: "Warn"
               - not_null:
-                  config:
-                   severity: "Warn"
+                 config:
+                  severity: "Warn"
