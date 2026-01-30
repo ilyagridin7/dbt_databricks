@@ -4,3 +4,6 @@ target/
 dbt_packages/
 logs/
 .env
+.profiles.yml
+.user.yml
+load-env.ps1
